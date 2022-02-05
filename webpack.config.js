@@ -1,8 +1,11 @@
+const autoprefixer = require('autoprefixer')
+const CompressionPlugin = require('compression-webpack-plugin')
 const { channel } = require('diagnostics_channel')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
+const { webpack } = require('webpack')
 
 const ruleForJavaScript = {
   test: /\.(js|jsx)$/,
@@ -26,6 +29,7 @@ const ruleFormCss = {
       loader: MiniCssExtractPlugin.loader,
     },
     'css-loader',
+    'postcss-loader',
     {
       loader: 'sass-loader',
     },
@@ -88,18 +92,27 @@ module.exports = (env, argv) => {
       rules,
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: './public/index.html',
-        filename: './index.html',
-      }),
+      isProduction ? () => {} : new webpack.HotModuleReplacementPlugin(),
+      /*  new webpack.LoaderOptionsPlugin({
+        options: {
+          postcss: [autoprefixer()],
+        },
+      }),*/
       new MiniCssExtractPlugin({
         filename: 'assets/css/app.css',
       }),
+      isProduction
+        ? new CompressionPlugin({
+            test: /\.js$|\.css$/,
+            filename: '[path].gz',
+          })
+        : () => {},
     ],
     devServer: {
       open: true,
-      port: 3000,
       compress: true,
+      historyApiFallback: true,
+      inline: false,
     },
   }
 }
