@@ -64,7 +64,6 @@ module.exports = (env, argv) => {
     optimization: {
       splitChunks: {
         chunks: 'async',
-        name: true,
         cacheGroups: {
           vendors: {
             name: 'vendors',
@@ -73,15 +72,7 @@ module.exports = (env, argv) => {
             priority: 1,
             filename: 'assets/vendor.js',
             enforce: true,
-            test(module, chunks) {
-              const name = module.nameForCondition && module.nameForCondition()
-              return chunks.some((chunks) => {
-                return (
-                  chunks.name !== 'vendor' &&
-                  /[\\/]node_modules[\\/]/.test(name)
-                )
-              })
-            },
+            test: /[\\/]node_modules[\\/]/,
           },
         },
       },
