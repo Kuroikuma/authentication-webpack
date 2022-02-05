@@ -98,7 +98,7 @@ module.exports = (env, argv) => {
       isProduction
         ? new CompressionPlugin({
             test: /\.js$|\.css$/,
-            filename: '[path].gz',
+            filename: '[path][base].gz',
           })
         : () => {},
     ],

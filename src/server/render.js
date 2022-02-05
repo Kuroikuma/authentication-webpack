@@ -11,8 +11,8 @@ const render = (html) => {
     <div id="app">
     ${html}
     </div>
-    <script src="assets/app.js" type="text/javascript"></script>
-      <script src="assets/vendor.js" type="text/javascript"></script>
+    <script src="public/assets/app.js" type="text/javascript"></script>
+      <script src="public/assets/vendor.js" type="text/javascript"></script>
   </body>
   </html>`
 }
