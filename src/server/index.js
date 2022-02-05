@@ -10,4 +10,4 @@ require('asset-require-hook')({
   name: 'assets/resources/[name].[ext]',
 })
 
-require('.server.js')
+require('./server.js')

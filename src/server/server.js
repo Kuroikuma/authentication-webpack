@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { webpack } from 'webpack'
-import main from '.routes/main'
+import main from './routes/main'
 import helmet from 'helmet'
 
 dotenv.config()
@@ -29,7 +29,7 @@ if (ENV === 'development') {
   app.use(webpackHotMiddleware(compiler))
 } else {
   console.log('Loading production config')
-  app.use(helmet)
+  app.use(helmet())
   app.use(helmet.permittedCrossDomainPolicies)
   app.disable('x-powered-by')
 }

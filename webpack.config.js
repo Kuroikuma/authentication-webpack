@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
-const { webpack } = require('webpack')
+const webpack = require('webpack')
 
 const ruleForJavaScript = {
   test: /\.(js|jsx)$/,
@@ -58,8 +58,11 @@ module.exports = (env, argv) => {
     entry: './src/frontend/index.js',
     devtool: isProduction ? 'hidden-source-map' : 'cheap-source-map',
     output: {
-      filename: isProduction ? '[name].[contenthash].js' : 'main.js',
-      path: path.resolve(__dirname, 'build'),
+      path: isProduction
+        ? path.join(process.cwd(), './src/server/public')
+        : '/',
+      filename: 'assets/app.js',
+      publicPath: '/',
     },
     optimization: {
       splitChunks: {
@@ -103,7 +106,6 @@ module.exports = (env, argv) => {
       open: true,
       compress: true,
       historyApiFallback: true,
-      inline: false,
     },
   }
 }
