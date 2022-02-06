@@ -1,8 +1,7 @@
-import './hola-mundo.css'
 import React from 'react'
-import image from '../../assets/image.jpeg'
+import image from '../../../assets/image.jpeg'
 import { GoogleLogin } from 'react-google-login'
-import { HolaMundoView } from '../components/hola-mundo'
+import { HolaMundoView } from '../components/hola-mundo.view'
 
 export const HolaMundo = () => {
   const responseGoogle = (response) => {

@@ -57,7 +57,7 @@ const rules = [ruleForJavaScript, ruleForHtml, ruleFormCss, ruleFormFile]
 
 module.exports = {
   entry: './src/frontend/index.js',
-  devtool: isProduction ? 'hidden-source-map' : 'cheap-source-map',
+  devtool: isProduction ? 'hidden-source-map' : 'source-map',
   output: {
     path: isProduction ? path.join(process.cwd(), './src/server/public') : '/',
     filename: 'assets/app.js',
