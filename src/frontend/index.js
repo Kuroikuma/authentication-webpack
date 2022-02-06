@@ -1,14 +1,11 @@
 import ReactDom from 'react-dom'
 import React from 'react'
-import { Router } from 'react-router'
-import { createBrowserHistory } from 'history'
+import { BrowserRouter } from 'react-router-dom';
 import { IndexRoutes } from './routes/index.routes'
 
-const history = createBrowserHistory()
-
 ReactDom.hydrate(
-  <React.StrictMode>
+  <BrowserRouter>
     <IndexRoutes />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('app')
 )

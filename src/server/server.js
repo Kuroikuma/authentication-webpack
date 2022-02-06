@@ -29,7 +29,11 @@ if (ENV === 'development') {
   app.disable('x-powered-by')
 }
 
-app.get('*', main)
+app.get('/contact', (req, res) => {
+  res.send('Hi!');
+});
+
+app.get('/', main)
 
 app.listen(PORT, (error) => {
   if (error) console.log(error)
