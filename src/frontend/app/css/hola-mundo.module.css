@@ -5,10 +5,11 @@
 .container {
   height: 100vh;
   width: 90vw;
+  background-color: aqua;
   display: flex;
   flex-direction: column;
 }
 .container img {
-  width: 90%;
+  width: 50%;
   object-fit: contain;
 }
