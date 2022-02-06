@@ -1,7 +1,4 @@
-const autoprefixer = require('autoprefixer')
 const CompressionPlugin = require('compression-webpack-plugin')
-const { channel } = require('diagnostics_channel')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const dotenv = require('dotenv')
@@ -58,6 +55,7 @@ const rules = [ruleForJavaScript, ruleForHtml, ruleFormCss, ruleFormFile]
 module.exports = {
   entry: './src/frontend/index.js',
   devtool: isProduction ? 'hidden-source-map' : 'source-map',
+  mode: isProduction ? 'production' : 'development',
   output: {
     path: isProduction ? path.join(process.cwd(), './src/server/public') : '/',
     filename: 'assets/app.js',
@@ -89,11 +87,6 @@ module.exports = {
   },
   plugins: [
     isProduction ? () => {} : new webpack.HotModuleReplacementPlugin(),
-    /*  new webpack.LoaderOptionsPlugin({
-        options: {
-          postcss: [autoprefixer()],
-        },
-      }),*/
     new MiniCssExtractPlugin({
       filename: 'assets/css/app.css',
     }),
