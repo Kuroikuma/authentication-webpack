@@ -1,15 +1,13 @@
 import express from 'express'
-import dotenv from 'dotenv'
-import { webpack } from 'webpack'
+import webpack from 'webpack'
 import main from './routes/main'
 import helmet from 'helmet'
 
-dotenv.config()
+require('dotenv').config()
 const ENV = process.env.NODE_ENV
 const PORT = process.env.PORT || 3000
 
 const app = express()
-
 app.use(express.static(`${__dirname}/public`))
 
 if (ENV === 'development') {
@@ -19,10 +17,7 @@ if (ENV === 'development') {
   const webpackHotMiddleware = require('webpack-hot-middleware')
   const compiler = webpack(webpackConfig)
   const serverConfig = {
-    contentBase: `http://localhost:${PORT}`,
-    port: { PORT },
     publicPath: webpackConfig.output.publicPath,
-    hot: true,
     stats: { colors: true },
   }
   app.use(webpackDevMiddleware(compiler, serverConfig))
