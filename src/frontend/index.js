@@ -1,5 +1,14 @@
 import ReactDom from 'react-dom'
 import React from 'react'
-import { HolaMundo } from './hola-mundo/hola-mundo'
+import { Router } from 'react-router'
+import { createBrowserHistory } from 'history'
+import { IndexRoutes } from './routes/index-routes'
 
-ReactDom.hydrate(<HolaMundo />, document.getElementById('app-react'))
+const history = createBrowserHistory()
+
+ReactDom.hydrate(
+  <Router history={history}>
+    <IndexRoutes />
+  </Router>,
+  document.getElementById('app')
+)
