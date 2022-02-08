@@ -1,0 +1,37 @@
+.change {
+  height: 4.5vh;
+  width: 5vw;
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 15px;
+  padding-left: 7px;
+  overflow: hidden;
+  justify-content: flex-start;
+  padding-right: 7px;
+}
+.change button {
+  height: 60%;
+  width: 50%;
+  transition: all 250ms ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+.change.white {
+  background-color: var(--text-color);
+}
+.change.white button {
+  transform: none;
+  background-color: var(--primary-color);
+}
+.change.dark {
+  background-color: var(--title-color);
+}
+.change.dark button {
+  transform: translateX(27px);
+  background-color: var(--primary-color);
+}
