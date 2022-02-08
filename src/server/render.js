@@ -9,9 +9,7 @@ const render = (html) => {
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
   </head>
   <body>
-    <div id="app">
-    ${html}
-    </div>
+    <div id="app">${html}</div>
     <script src="assets/app.js" type="text/javascript"></script>
     <script src="assets/vendor.js" type="text/javascript"></script>
   </body>
