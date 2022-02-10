@@ -1,0 +1,82 @@
+.loginContainer {
+  height: 70vh;
+  width: 30vw;
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginContainer__Top {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginContainer h3 {
+  font-family: Noto Sans;
+  width: 90%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.035em;
+  color: var(--text-logo);
+}
+.loginContainer__Top button {
+  background: #2f80ed;
+  border-radius: 8px;
+  width: 90%;
+  cursor: pointer;
+  border: none;
+  height: 34px;
+}
+.loginContainer__Top button {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+}
+.loginContainer__Botton {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginContainer__Botton p {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.035em;
+  color: var(--text-color);
+}
+.loginContainer__Botton__Logo {
+  height: 40%;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.loginContainer__Botton__Logo__item {
+  border: 1px solid #828282;
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.loginContainer__Botton p span {
+  color: #1f88ff;
+}

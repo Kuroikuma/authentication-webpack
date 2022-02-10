@@ -1,0 +1,23 @@
+.buttonGithub {
+  height: 100%;
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.linkGithub {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.linkGithub img {
+  width: 70%;
+  object-fit: contain;
+}

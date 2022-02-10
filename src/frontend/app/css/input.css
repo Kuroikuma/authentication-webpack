@@ -1,0 +1,102 @@
+.containerInput {
+  width: 200px;
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+}
+.containerInput p {
+  transition-property: color;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+.containerInput input {
+  width: 200px;
+  height: 56px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 8px;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--text-logo);
+  transition-property: border;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+.containerInput input::placeholder {
+  color: var(--text-logo);
+}
+.containerInput input:hover {
+  border: 1px solid var(--border-color);
+}
+.focus.containerInput p {
+  color: #2962ff;
+}
+.focus.containerInput input {
+  border: 1px solid #2962ff;
+}
+
+.error input {
+  border: 1px solid #d32f2f;
+}
+.error p {
+  color: #d32f2f;
+}
+.hover.error p {
+  color: #333333;
+}
+.focus.error input {
+  border: 1px solid #d32f2f;
+}
+.focus.error p {
+  color: #d32f2f;
+}
+.sm {
+  width: 200px;
+  height: 40px;
+}
+.md {
+  width: 200px;
+  height: 56px;
+}
+.fullWidth {
+  width: 90%;
+}
+
+.containerInput textarea {
+  outline: none;
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 8px;
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: #828282;
+  transition-property: border;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+.containerInput textarea:hover {
+  border: 1px solid #333333;
+}
+
+.focus.containerInput textarea {
+  border: 1px solid #2962ff;
+}
+.error textarea {
+  border: 1px solid #d32f2f;
+}
+.focus.error textarea {
+  border: 1px solid #d32f2f;
+}
+#input {
+  width: 100%;
+}

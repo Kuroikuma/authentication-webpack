@@ -1,0 +1,14 @@
+.buttonGoogle {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.buttonGoogle img {
+  width: 60%;
+  object-fit: contain;
+}

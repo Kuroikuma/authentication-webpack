@@ -1,0 +1,133 @@
+.buttonDefault {
+  width: 81px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0e0e0;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+  border-radius: 6px;
+  transition: background 0.5s ease;
+}
+.buttonDefault img {
+  height: 70%;
+  object-fit: contain;
+}
+.buttonDefault p {
+  margin: 0px;
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: white;
+}
+.buttonDefault:hover {
+  background: #aeaeae;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+}
+.buttonDefault:focus {
+  background: #aeaeae;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+}
+.outline {
+  background-color: white;
+  border: 1px solid #3d5afe;
+
+  transition: background 0.5s ease;
+}
+.outline {
+  color: #3d5afe;
+}
+.outline:hover {
+  background: rgba(41, 98, 255, 0.1);
+}
+.outline:focus {
+  background: rgba(41, 98, 255, 0.1);
+}
+.text {
+  border: none;
+  background-color: white;
+  transition: background 0.5s ease;
+}
+.text:hover {
+  background: rgba(41, 98, 255, 0.1);
+}
+.text:focus {
+  background: rgba(41, 98, 255, 0.1);
+}
+.disabled {
+  background: #e0e0e0;
+}
+.disabled p {
+  color: #9e9e9e;
+}
+.primary {
+  background: #2962ff;
+  box-shadow: 0px 2px 3px rgba(41, 98, 255, 0.2);
+  border-radius: 6px;
+}
+.primary p {
+  color: white;
+}
+.primary:hover,
+.primary:focus {
+  background: #0039cb;
+  box-shadow: 0px 2px 3px rgba(41, 98, 255, 0.2);
+  border-radius: 6px;
+}
+.default {
+  background: #e0e0e0;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+}
+.default p {
+  color: #3f3f3f;
+}
+.default:hover,
+.default:focus {
+  background: #aeaeae;
+}
+.secondary {
+  background: #455a64;
+  box-shadow: 0px 2px 3px rgba(69, 90, 100, 0.2);
+}
+.secondary:hover,
+.secondary:focus {
+  background: #1c313a;
+}
+.danger {
+  background: #d32f2f;
+  box-shadow: 0px 2px 3px rgba(211, 47, 47, 0.2);
+}
+.danger:hover,
+.danger:focus {
+  background: #9a0007;
+}
+.sm {
+  width: 73px;
+  height: 32px;
+}
+.md {
+  width: 81px;
+  height: 36px;
+}
+.lg {
+  width: 93px;
+  height: 42px;
+}
+.startIcon {
+  width: 105px;
+  height: 36px;
+  justify-content: space-around;
+}
+.endIcon {
+  width: 105px;
+  height: 36px;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+
+.buttonDefault.disableShadow {
+  box-shadow: none;
+}

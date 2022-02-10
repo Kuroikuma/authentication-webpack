@@ -1,7 +1,9 @@
 import express from 'express'
 import webpack from 'webpack'
 import main from './routes/main'
+import profile from './routes/profile'
 import helmet from 'helmet'
+
 
 require('dotenv').config()
 const ENV = process.env.NODE_ENV
@@ -29,8 +31,9 @@ if (ENV === 'development') {
   app.disable('x-powered-by')
 }
 
-app.get('/contact', (req, res) => {
-  res.send('Hi!')
+app.get('/profile', profile)
+app.get('/logout', (req, res) => {
+  res.redirect('/')
 })
 
 app.get('*', main)

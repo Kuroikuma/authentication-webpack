@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto Sans');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 * {
   margin: 0px;
   padding: 0px;
@@ -9,12 +11,16 @@
   --second-color: #c7c7dd;
   --text-color: #333333;
   --title-color: #000000;
+  --text-logo: #333;
+  --border-color: #333333;
 }
 .container.dark {
   --primary-color: #2a2b2f;
   --second-color: #2f3237;
   --text-color: #8d99a7;
   --title-color: #e5eaf0;
+  --text-logo: #e5eaf0;
+  --border-color: #fbfbfb;
 }
 .container {
   height: 100vh;
@@ -23,4 +29,6 @@
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

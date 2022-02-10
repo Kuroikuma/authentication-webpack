@@ -8,6 +8,11 @@ const render = (html) => {
     <title>App Web</title>
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
   </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Noto Sans');
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  </style>
   <body>
     <div id="app">${html}</div>
     <script src="assets/app.js" type="text/javascript"></script>
