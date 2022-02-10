@@ -1,6 +1,6 @@
 const superagent = require('superagent')
 
-const profile = (req, res, next) => {
+const auth_github = (req, res) => {
   const { query } = req
   const { code } = query
   if (!code) {
@@ -20,8 +20,8 @@ const profile = (req, res, next) => {
     .set('acepts', 'application/json')
     .end((err, result) => {
       const data = result.body
-      console.log(data)
+      const user = data.access_token
+      res.redirect(`/profile/${user}`)
     })
-  next()
 }
-module.exports = profile
+module.exports = auth_github

@@ -1,5 +1,8 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 export const ProfileView = () => {
-  return <>Este es el perfil</>
+  let params = useParams()
+  console.log(`user desde el perfil${params.user}`)
+  return <>Este es el perfil id{params.user}</>
 }

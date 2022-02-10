@@ -1,7 +1,7 @@
 import express from 'express'
 import webpack from 'webpack'
 import main from './routes/main'
-import profile from './routes/profile'
+import auth_github from './routes/auth_github'
 import helmet from 'helmet'
 
 
@@ -31,7 +31,7 @@ if (ENV === 'development') {
   app.disable('x-powered-by')
 }
 
-app.get('/profile', profile)
+app.get('/auth-github', auth_github)
 app.get('/logout', (req, res) => {
   res.redirect('/')
 })

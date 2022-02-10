@@ -4,6 +4,7 @@ import { Textfield } from '../containers/input'
 import { ButtonGoogle } from '../containers/google-button'
 import { ButtonGitHub } from '../containers/github-button'
 import { ButtonFacebook } from '../containers/facebook-button'
+import { ButtonTwitter } from '../components/twitter-buttton'
 import '../css/login.css'
 
 export const LoginPage = () => {
@@ -33,7 +34,9 @@ export const LoginPage = () => {
             <div className="loginContainer__Botton__Logo__item">
               <ButtonFacebook />
             </div>
-            <div className="loginContainer__Botton__Logo__item"></div>
+            <div className="loginContainer__Botton__Logo__item">
+              <ButtonTwitter />
+            </div>
           </div>
           <p>
             Don’t have an account yet?<span>Register</span>
