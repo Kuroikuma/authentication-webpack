@@ -11,6 +11,7 @@ export const ButtonGoogle = () => {
 
   const responseGoogle = (response) => {
     const user = response.profileObj.googleId
+    console.log(response);
     navigate(`/profile/${user}`)
   }
 
