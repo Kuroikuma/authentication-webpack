@@ -11,10 +11,8 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 const ruleForJavaScript = {
   test: /\.(js|jsx)$/,
-  loader: 'babel-loader',
-  options: {
-    presets: [['@babel/preset-react', { runtime: 'automatic' }]],
-  },
+  exclude: /node_modules/,
+  use: { loader: 'babel-loader' },
 }
 
 const ruleForHtml = {
