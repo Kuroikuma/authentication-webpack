@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { LoginPage } from '../app/page/login'
+import { LoginPage } from '../app/pages/login/login'
 import { Layout } from '../app/containers/layout'
 import { ProfileView } from '../app/components/profile.view'
 export const IndexRoutes = () => {

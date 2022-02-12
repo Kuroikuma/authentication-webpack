@@ -20,6 +20,7 @@ const auth_github = (req, res) => {
     .set('acepts', 'application/json')
     .end((err, result) => {
       const data = result.body
+      console.log(data)
       const user = data.access_token
       res.redirect(`/profile/${user}`)
     })
