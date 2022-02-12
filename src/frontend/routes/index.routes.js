@@ -7,6 +7,7 @@ export const IndexRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/about" element={<h1>About</h1>} />
       <Route path="/layout" element={<Layout />} />
       <Route path="profile/:user" element={<ProfileView />} />
