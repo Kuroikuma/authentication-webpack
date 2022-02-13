@@ -5,7 +5,6 @@ const User = require('../models/user-models')
 exports.add = async (req, res, next) => {
   const { user, message, chatRoom } = req.body
 
-  console.log(message)
 
   ChatRoom.findById(chatRoom)
     .then((response) => console.log(response))

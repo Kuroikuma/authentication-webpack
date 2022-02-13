@@ -7,7 +7,6 @@ exports.add = async (req, res, next) => {
       req.body
 
     const passwordHash = await bcrypt.hash(password, 10)
-    console.log('que pasho' + ' ' + passwordHash)
     const user = new User({
       username,
       name,

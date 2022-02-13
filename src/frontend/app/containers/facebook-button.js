@@ -20,7 +20,6 @@ export const ButtonFacebook = () => {
     })
   }
   const facebookLoginHandler = (response) => {
-    console.log(response)
     if (response.status === 'connected') {
       window.FB.api('/me?fields=id,name,email,picture', (userData) => {
         const user = userData.id
