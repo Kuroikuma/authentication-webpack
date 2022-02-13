@@ -4,6 +4,7 @@ const router = express.Router()
 const userController = require('../controllers/user-controller')
 const chatRoomController = require('../controllers/chatRoom-controller')
 const chatController = require('../controllers/chat-controller')
+const loginAuthController = require('../controllers/login_auth-controller')
 
 module.exports = function () {
   /*****************  USER  ********************/
@@ -21,9 +22,16 @@ module.exports = function () {
 
   /*****************  CHAT ROOM ********************/
 
-  router.post('/chat-room', chatRoomController.add)
-  router.get('/chat-room', chatRoomController.show)
-  router.get('/chat-room/:id', chatRoomController.showById)
+  router.post('/chat_room', chatRoomController.add)
+  router.get('/chat_room', chatRoomController.show)
+  router.get('/chat_room/:id', chatRoomController.showById)
+
+  /*****************  LOGIN AUTH ********************/
+  router.post(
+    '/login_auth',
+    loginAuthController.add,
+    loginAuthController.showById
+  )
 
   return router
 }

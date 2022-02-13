@@ -5,6 +5,8 @@ import auth_github from './routes/auth_github'
 import helmet from 'helmet'
 import router from './routes/router'
 
+const superagent = require('superagent')
+
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
@@ -44,10 +46,17 @@ if (ENV === 'development') {
   app.disable('x-powered-by')
 }
 
-app.get('/auth-github', auth_github)
+app.get('/auth-github/:code', auth_github)
 
-app.get('/logout', (req, res) => {
-  res.redirect('/')
+app.get('/user/', (req, res) => {
+  const accessToken = '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'
+  superagent
+    .get('https://api.github.com/user')
+    .set('Authorization', 'token ' + accessToken)
+    .set('User-Agent', 'chat-group')
+    .then(function (response) {
+      res.send(response.body)
+    })
 })
 
 app.get('*', main)
@@ -60,6 +69,14 @@ app.use((error, request, response, next) => {
       break
     case 'ReferenceError':
       response.status(500).send({ error: 'Error interno' })
+      break
+    case 'Forbidden':
+      response.status(403).send({ error: 'Prohibido el paso' })
+      break
+    case 'ValidationError':
+      response
+        .status(400)
+        .send({ error: 'heche un vistaso que los tipos de datos coincidad' })
       break
     default:
       response.status(500).end()

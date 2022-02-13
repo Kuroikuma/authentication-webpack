@@ -5,22 +5,27 @@ exports.add = async (req, res, next) => {
   try {
     const { username, name, password, avatar, biography, phone, email } =
       req.body
+    console.log(1)
+    const userVerify = await User.find({ email: email })
 
-    const passwordHash = await bcrypt.hash(password, 10)
-    console.log('que pasho' + ' ' + passwordHash)
-    const user = new User({
-      username,
-      name,
-      passwordHash,
-      avatar,
-      biography,
-      phone,
-      email,
-    })
+    if (!userVerify) {
+      const passwordHash = await bcrypt.hash(password, 10)
+      const user = new User({
+        username,
+        name,
+        passwordHash,
+        avatar,
+        biography,
+        phone,
+        email,
+      })
 
-    const savedUser = await user.save()
+      const savedUser = await user.save()
 
-    res.json(savedUser)
+      res.json(savedUser)
+    } else {
+      res.json('este usuario ya exite')
+    }
   } catch (error) {
     next(error)
   }

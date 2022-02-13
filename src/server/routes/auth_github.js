@@ -1,8 +1,7 @@
 const superagent = require('superagent')
 
 const auth_github = (req, res) => {
-  const { query } = req
-  const { code } = query
+  const code = req.params.code
   if (!code) {
     return res.send({
       success: false,
@@ -20,9 +19,14 @@ const auth_github = (req, res) => {
     .set('acepts', 'application/json')
     .end((err, result) => {
       const data = result.body
-      console.log(data)
-      const user = data.access_token
-      res.redirect(`/profile/${user}`)
+      const accessToken = data.access_token
+      superagent
+        .get('https://api.github.com/user')
+        .set('Authorization', 'token ' + accessToken)
+        .set('User-Agent', 'chat-group')
+        .then(function (response) {
+          res.send(response.body)
+        })
     })
 }
 module.exports = auth_github
