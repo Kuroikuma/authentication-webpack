@@ -10,9 +10,15 @@ export const ButtonGoogle = () => {
   const { theme } = useContext(Context)
 
   const responseGoogle = (response) => {
-    const user = response.profileObj.googleId
-    console.log(response);
-    navigate(`/profile/${user}`)
+    const user = response.profileObj
+    const userPost = {
+      email: user.emai || '',
+      username: user.givenName || '',
+      password: user.googleId || '',
+      avatar: user.imageUrl || '',
+      name: user.name || '',
+    }
+    //   navigate(`/profile/${user}`)
   }
 
   return (
