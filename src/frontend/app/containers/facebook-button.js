@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Context from '../context/theme.context'
 import logoWhite from '../.././../assets/facebook-white.png'
 import logoDark from '../.././../assets/facebook-dark.png'
+import { postUserAuth } from '../../services/user.services'
 import { ButtonFacebookView } from '../components/facebook-button'
 
 export const ButtonFacebook = () => {
@@ -22,8 +23,17 @@ export const ButtonFacebook = () => {
   const facebookLoginHandler = (response) => {
     if (response.status === 'connected') {
       window.FB.api('/me?fields=id,name,email,picture', (userData) => {
-        const user = userData.id
-        navigate(`/profile/${user}`)
+        const userPost = {
+          email: userData.email || '',
+          username: 'avatar default',
+          password: userData.id || '',
+          avatar: userData.picture.data.url || '',
+          name: userData.name || '',
+          biography: '',
+          phone: 0,
+        }
+        postUserAuth(userPost).then((response) => console.log(response))
+        //    navigate(`/profile/${user}`)
       })
     }
   }

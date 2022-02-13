@@ -73,6 +73,11 @@ app.use((error, request, response, next) => {
     case 'Forbidden':
       response.status(403).send({ error: 'Prohibido el paso' })
       break
+    case 'ValidationError':
+      response
+        .status(400)
+        .send({ error: 'heche un vistaso que los tipos de datos coincidad' })
+      break
     default:
       response.status(500).end()
       break
