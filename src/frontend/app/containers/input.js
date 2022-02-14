@@ -13,6 +13,8 @@ export const Textfield = (props) => {
     placeholder = '',
     multiline = false,
     rows = 0,
+    name = '',
+    handleChange,
   } = props
   const [focus, setFocus] = useState(false)
   const [valueI, setvalueI] = useState(value)
@@ -28,6 +30,9 @@ export const Textfield = (props) => {
 
   const handleInputChange = (evt) => {
     setvalueI(evt.target.value)
+    if (evt.target.name) {
+      handleChange(evt.target.name, evt.target.value)
+    }
   }
 
   return (
@@ -47,6 +52,7 @@ export const Textfield = (props) => {
       placeholder={placeholder}
       valueI={valueI}
       helperText={helperText}
+      name={name}
     />
   )
 }

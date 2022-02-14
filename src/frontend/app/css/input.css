@@ -56,15 +56,15 @@
 .focus.error p {
   color: #d32f2f;
 }
-.sm {
+.smi {
   width: 200px;
   height: 40px;
 }
-.md {
+.mdi {
   width: 200px;
   height: 56px;
 }
-.fullWidth {
+.fullWidthi {
   width: 90%;
 }
 

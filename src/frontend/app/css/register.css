@@ -1,0 +1,24 @@
+.registerContainer {
+  height: 75vh;
+  width: 30vw;
+  margin-top: 20px;
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.registerContainer h3 {
+  font-family: Noto Sans;
+  width: 90%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.035em;
+  color: var(--text-logo);
+}
