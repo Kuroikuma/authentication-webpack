@@ -9,18 +9,18 @@
 .container.white {
   --primary-color: #fafafb;
   --second-color: #c7c7dd;
-  --text-color: #333333;
-  --title-color: #000000;
+  --text-color: #8d99a7;
+  --title-color: #e5eaf0;
+  --border-color: #fbfbfb;
   --text-logo: #333;
-  --border-color: #333333;
 }
 .container.dark {
   --primary-color: #2a2b2f;
   --second-color: #2f3237;
-  --text-color: #8d99a7;
-  --title-color: #e5eaf0;
+  --text-color: #333333;
+  --title-color: #000000;
+  --border-color: #333333;
   --text-logo: #e5eaf0;
-  --border-color: #fbfbfb;
 }
 .container {
   height: 100vh;
