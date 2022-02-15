@@ -2,6 +2,7 @@
   width: 81px;
   height: 36px;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   background: #e0e0e0;
@@ -111,7 +112,7 @@
 }
 .md {
   width: 81px;
-  height: 36px;
+  height: 32px;
 }
 .lg {
   width: 93px;
