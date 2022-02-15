@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { RegisterView } from './register.view'
 import { useFileStorage } from '../../hooks/useFileStorage'
 import { useRegister } from '../../hooks/useRegister'
 import { postUser } from '../../../services/user.services'
 
 export const Register = () => {
+  let navigate = useNavigate()
   const elementRef = useRef(null)
 
   const [file, fileHandler] = useFileStorage()
@@ -47,6 +49,7 @@ export const Register = () => {
       .then((response) => console.log(response))
       .catch((error) => console.log(error))
     ClearRegisterField()
+    navigate('/')
   }
 
   return (

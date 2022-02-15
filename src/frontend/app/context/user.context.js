@@ -1,17 +1,19 @@
-import React, { createContext, useReducer, useState } from 'react'
-import { initialState, reducer } from '../../store/reducer'
+import React, { createContext, useState } from 'react'
+import { useLogin } from '../hooks/useLogin'
 
-const AuthContext = createContext()
+const UserContext = createContext()
 
-export const AuthProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-  console.log(initialState)
+export const UserProvider = ({ children }) => {
+  const { isLoggedIn, user, Login, Logout } = useLogin()
+
   const [isLoading, setIsLoading] = useState(false)
   return (
-    <AuthContext.Provider value={{ state, dispatch, isLoading, setIsLoading }}>
+    <UserContext.Provider
+      value={{ isLoggedIn, user, Login, Logout, isLoading, setIsLoading }}
+    >
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   )
 }
 
-export default AuthContext
+export default UserContext

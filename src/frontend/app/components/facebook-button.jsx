@@ -9,7 +9,7 @@ export const ButtonFacebookView = ({
 }) => {
   return (
     <button className="buttonGoogle" onClick={facebookLogin}>
-      <img src={theme === 'white' ? logoDark : logoWhite} alt="facebook" />
+      <img src={theme === 'white' ? logoWhite : logoDark} alt="facebook" />
     </button>
   )
 }

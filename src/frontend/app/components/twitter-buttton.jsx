@@ -8,7 +8,7 @@ export const ButtonTwitter = () => {
   const { theme } = useContext(Context)
   return (
     <button className="buttonGoogle">
-      <img src={theme === 'white' ? logoDark : logoWhite} alt="google" />
+      <img src={theme === 'white' ? logoWhite : logoDark} alt="google" />
     </button>
   )
 }

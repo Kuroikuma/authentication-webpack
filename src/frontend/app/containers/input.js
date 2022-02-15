@@ -14,7 +14,7 @@ export const Textfield = (props) => {
     multiline = false,
     rows = 0,
     name = '',
-    handleChange,
+    onChange,
   } = props
   const [focus, setFocus] = useState(false)
 
@@ -28,13 +28,6 @@ export const Textfield = (props) => {
     setHover(!hover)
   }
 
-  const handleInputChange = (evt) => {
-    setvalueI(evt.target.value)
-    if (evt.target.name) {
-      handleChange(evt.target.name, evt.target.value)
-    }
-  }
-
   return (
     <TextfieldView
       fullWidth={fullWidth}
@@ -42,7 +35,7 @@ export const Textfield = (props) => {
       focus={focus}
       error={error}
       size={size}
-      handleChange={handleChange}
+      onChange={onChange}
       disabled={disabled}
       multiline={multiline}
       handlerHoverChange={handlerHoverChange}

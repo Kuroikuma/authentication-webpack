@@ -23,13 +23,13 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
-  color: var(--text-logo);
+  color: var(--title-color);
   transition-property: border;
   transition-timing-function: ease;
   transition-duration: 0.5s;
 }
 .containerInput input::placeholder {
-  color: var(--text-logo);
+  color: var(--title-color);
 }
 .containerInput input:hover {
   border: 1px solid var(--border-color);
@@ -97,6 +97,6 @@
 .focus.error textarea {
   border: 1px solid #d32f2f;
 }
-#input {
-  width: 100%;
+.input {
+  width: 100% !important;
 }

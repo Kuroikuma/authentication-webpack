@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Context from '../context/theme.context'
+import UserContext from '../context/user.context'
 import logoWhite from '../.././../assets/github-logo-white.png'
 import logoDark from '../.././../assets/github-logo-dark.png'
 import { postUserAuth } from '../../services/user.services'
@@ -7,6 +9,8 @@ import { ButtonGitHubView } from '../components/github-button'
 
 export const ButtonGitHub = () => {
   const { theme } = useContext(Context)
+  let navigate = useNavigate()
+  const { Login } = useContext(UserContext)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -27,7 +31,10 @@ export const ButtonGitHub = () => {
               biography: response.bio || '',
               phone: 0,
             }
-            postUserAuth(userPost).then((response) => console.log(response))
+            postUserAuth(userPost).then((response) =>
+              response ? Login({ isLoggedIn: true, user: response }) : null
+            )
+            navigate(`/profile`)
           })
           .catch((error) => {
             console.log(error)

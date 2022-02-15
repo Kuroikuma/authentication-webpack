@@ -17,7 +17,7 @@ export const ButtonGoogleView = ({
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
         >
-          <img src={theme === 'white' ? logoDark : logoWhite} alt="google" />
+          <img src={theme === 'white' ? logoWhite : logoDark} alt="google" />
         </button>
       )}
       onSuccess={responseGoogle}

@@ -8,7 +8,7 @@ export const ButtonGitHubView = ({ logoWhite, logoDark, theme }) => {
         className="linkGithub"
         href="https://github.com/login/oauth/authorize?client_id=5b0a416181b203e91d38"
       >
-        <img src={theme === 'white' ? logoDark : logoWhite} alt="logo" />
+        <img src={theme === 'white' ? logoWhite : logoDark} alt="logo" />
       </a>
     </button>
   )
