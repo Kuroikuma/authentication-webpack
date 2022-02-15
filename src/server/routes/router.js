@@ -5,6 +5,7 @@ const userController = require('../controllers/user-controller')
 const chatRoomController = require('../controllers/chatRoom-controller')
 const chatController = require('../controllers/chat-controller')
 const loginAuthController = require('../controllers/login_auth-controller')
+const loginController = require('../controllers/login-controller')
 
 module.exports = function () {
   /*****************  USER  ********************/
@@ -27,11 +28,10 @@ module.exports = function () {
   router.get('/chat_room/:id', chatRoomController.showById)
 
   /*****************  LOGIN AUTH ********************/
-  router.post(
-    '/login_auth',
-    loginAuthController.add,
-    loginAuthController.showById
-  )
+  router.post('/login_auth', loginAuthController.add, loginAuthController.login)
+
+  /*******************  LOGIN  **********************/
+  router.post('/login', loginController.login)
 
   return router
 }

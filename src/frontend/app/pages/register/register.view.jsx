@@ -4,13 +4,27 @@ import { Textfield } from '../../containers/input'
 import { Button } from '../../components/button'
 import '../../css/register.css'
 
-export const RegisterView = () => {
+export const RegisterView = (props) => {
+  const {
+    elementRef,
+    handleFile,
+    handleClick,
+    username,
+    name,
+    password,
+    biography,
+    email,
+    handleChange,
+    onPost,
+  } = props
   return (
     <Layout>
       <div className="registerContainer">
         <h3>Register</h3>
         <Textfield
           name="username"
+          value={username}
+          handleChange={handleChange}
           size="sm"
           fullWidth
           type="text"
@@ -18,6 +32,8 @@ export const RegisterView = () => {
         />
         <Textfield
           name="name"
+          value={name}
+          handleChange={handleChange}
           size="sm"
           fullWidth
           type="text"
@@ -25,6 +41,8 @@ export const RegisterView = () => {
         />
         <Textfield
           name="email"
+          value={email}
+          handleChange={handleChange}
           size="sm"
           fullWidth
           type="text"
@@ -33,6 +51,8 @@ export const RegisterView = () => {
         <Textfield
           name="password"
           size="sm"
+          handleChange={handleChange}
+          value={password}
           fullWidth
           type="password"
           placeholder="password"
@@ -40,18 +60,24 @@ export const RegisterView = () => {
         <Textfield
           name="biography"
           size="sm"
+          value={biography}
+          handleChange={handleChange}
           fullWidth
           type="text"
           placeholder="biography"
         />
-        <Textfield
-          name="avatar"
-          size="sm"
-          fullWidth
-          type="text"
-          placeholder="avatar"
-        />
-        <Button startIcon="send" variant="primary">
+        <Button
+          onClick={handleClick}
+          startIcon="photo"
+          size="lg"
+          variant="primary"
+        >
+          Upload
+        </Button>
+        <div className="inputFile">
+          <input onChange={handleFile} type="file" ref={elementRef} />
+        </div>
+        <Button onClick={onPost} startIcon="send" variant="primary">
           Send
         </Button>
       </div>

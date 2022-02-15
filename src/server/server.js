@@ -5,8 +5,6 @@ import auth_github from './routes/auth_github'
 import helmet from 'helmet'
 import router from './routes/router'
 
-const superagent = require('superagent')
-
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
@@ -47,17 +45,6 @@ if (ENV === 'development') {
 }
 
 app.get('/auth-github/:code', auth_github)
-
-app.get('/user/', (req, res) => {
-  const accessToken = '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'
-  superagent
-    .get('https://api.github.com/user')
-    .set('Authorization', 'token ' + accessToken)
-    .set('User-Agent', 'chat-group')
-    .then(function (response) {
-      res.send(response.body)
-    })
-})
 
 app.get('*', main)
 

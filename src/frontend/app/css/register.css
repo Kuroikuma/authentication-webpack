@@ -22,3 +22,9 @@
   letter-spacing: -0.035em;
   color: var(--text-logo);
 }
+.inputFile {
+  display: none;
+}
+.inputFile input {
+  display: none;
+}

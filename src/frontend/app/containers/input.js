@@ -17,7 +17,7 @@ export const Textfield = (props) => {
     handleChange,
   } = props
   const [focus, setFocus] = useState(false)
-  const [valueI, setvalueI] = useState(value)
+
   const [hover, setHover] = useState(false)
 
   const handlerFocusChange = () => {
@@ -42,7 +42,7 @@ export const Textfield = (props) => {
       focus={focus}
       error={error}
       size={size}
-      handleInputChange={handleInputChange}
+      handleChange={handleChange}
       disabled={disabled}
       multiline={multiline}
       handlerHoverChange={handlerHoverChange}
@@ -50,7 +50,7 @@ export const Textfield = (props) => {
       rows={rows}
       type={type}
       placeholder={placeholder}
-      valueI={valueI}
+      value={value}
       helperText={helperText}
       name={name}
     />
