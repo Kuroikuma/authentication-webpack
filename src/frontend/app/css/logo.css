@@ -10,6 +10,7 @@
   width: 140px;
 }
 .logo h2 {
+  cursor: pointer;
   color: var(--text-logo);
   font-family: Raleway;
   font-size: 20px;
