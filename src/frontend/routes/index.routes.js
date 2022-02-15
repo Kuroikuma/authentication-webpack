@@ -12,7 +12,7 @@ export const IndexRoutes = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/about" element={<h1>About</h1>} />
       <Route path="/layout" element={<Layout />} />
-      <Route path="profile/:user" element={<ProfileView />} />
+      <Route path="/profile" element={<ProfileView />} />
       <Route path="/contact" element={<h1>Contact</h1>} />
     </Routes>
   )

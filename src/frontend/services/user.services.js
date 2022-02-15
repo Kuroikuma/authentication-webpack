@@ -31,7 +31,7 @@ export async function postUser(user) {
     .catch((error) => console.log(error))
 }
 
-export async function Login(user) {
+export async function LoginServices(user) {
   const response = await fetch(`/api/login`, {
     method: 'POST',
     mode: 'cors',

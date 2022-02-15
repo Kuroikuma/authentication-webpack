@@ -7,21 +7,42 @@ import { ButtonGitHub } from '../../containers/github-button'
 import { ButtonFacebook } from '../../containers/facebook-button'
 import { ButtonTwitter } from '../../components/twitter-buttton'
 
-export const LoginPageView = ({ pushRegister }) => {
+export const LoginPageView = ({
+  pushRegister,
+  password,
+  email,
+  handleChange,
+  onLogin,
+  isErrorEmail,
+  isErrorPassword,
+}) => {
   return (
     <Layout>
       <div className="loginContainer">
-        <div className="loginContainer__Top">
+        <form onSubmit={onLogin} className="loginContainer__Top">
           <h3>Login</h3>
-          <Textfield size="sm" fullWidth type="text" placeholder="email" />
+          <Textfield
+            size="sm"
+            value={email}
+            name="email"
+            onChange={handleChange}
+            fullWidth
+            type="text"
+            error={isErrorEmail}
+            placeholder="email"
+          />
           <Textfield
             size="sm"
             fullWidth
+            value={password}
+            onChange={handleChange}
+            name="password"
             type="password"
+            error={isErrorPassword}
             placeholder="password"
           />
           <button>Login</button>
-        </div>
+        </form>
         <div className="loginContainer__Botton">
           <p>or continue with these social profile</p>
           <div className="loginContainer__Botton__Logo">
