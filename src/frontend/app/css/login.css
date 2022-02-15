@@ -78,5 +78,6 @@
   box-sizing: border-box;
 }
 .loginContainer__Botton p span {
+  cursor: pointer;
   color: #1f88ff;
 }

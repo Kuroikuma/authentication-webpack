@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt')
-const { response } = require('express')
 const jwt = require('jsonwebtoken')
 const User = require('../models/user-models')
 
@@ -34,7 +33,7 @@ exports.add = async (req, res, next) => {
   }
 }
 
-exports.showById = async (req, res, next) => {
+exports.login = async (req, res, next) => {
   const { password, username, email } = req.body
   try {
     const user = await User.findOne({ email })

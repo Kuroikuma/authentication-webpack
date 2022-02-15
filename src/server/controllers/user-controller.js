@@ -5,10 +5,9 @@ exports.add = async (req, res, next) => {
   try {
     const { username, name, password, avatar, biography, phone, email } =
       req.body
-    console.log(1)
     const userVerify = await User.find({ email: email })
-
-    if (!userVerify) {
+    console.log('user post: ' + req.body + 'username: ', userVerify)
+    if (!userVerify.length) {
       const passwordHash = await bcrypt.hash(password, 10)
       const user = new User({
         username,

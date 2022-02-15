@@ -1,10 +1,11 @@
-import './button.css'
+import '../css/button.css'
 import React, { useState, useEffect } from 'react'
-import send from '../../../../assets/send-message.png'
-import deleteI from '../../../../assets/bin.png'
-import donate from '../../../../assets/diskette (1).png'
-import save from '../../../../assets/diskette.png'
-import shoppiengcart from '../../../../assets/shoppingcart.png'
+import send from '../../../assets/send-message.png'
+import deleteI from '../../../assets/bin.png'
+import donate from '../../../assets/diskette (1).png'
+import save from '../../../assets/diskette.png'
+import photo from '../../../assets/photo.png'
+import shoppiengcart from '../../../assets/shoppingcart.png'
 
 export const Button = ({
   variant = '',
@@ -18,9 +19,8 @@ export const Button = ({
   children,
   disableShadow = '',
   disabled,
-  handleChange = null,
+  onClick = null,
 }) => {
-  console.log(disabled)
   const [position, setPosition] = useState('')
   const [img, setImg] = useState()
 
@@ -43,6 +43,9 @@ export const Button = ({
     switch (startIcon || endIcon) {
       case 'send':
         setImg(send)
+        break
+      case 'photo':
+        setImg(photo)
         break
       case 'delete':
         setImg(deleteI)
@@ -67,7 +70,7 @@ export const Button = ({
       name={name}
       title={title}
       disabled={disabled}
-      onClick={handleChange}
+      onClick={onClick}
       id={id}
       className={`buttonDefault ${variant} ${disableShadow} ${position} ${size} ${color}`}
     >

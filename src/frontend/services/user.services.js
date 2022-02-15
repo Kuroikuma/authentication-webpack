@@ -10,7 +10,29 @@ export const getUser = async () => {
 }
 
 export async function postUser(user) {
+  console.log(user)
   const response = await fetch(`/api/user`, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(user),
+  })
+  return response
+    .json()
+    .then((response) => {
+      return response
+    })
+    .catch((error) => console.log(error))
+}
+
+export async function Login(user) {
+  const response = await fetch(`/api/login`, {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',

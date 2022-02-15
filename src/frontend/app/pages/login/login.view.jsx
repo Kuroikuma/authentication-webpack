@@ -1,13 +1,13 @@
 import React from 'react'
+import '../../css/login.css'
 import { Layout } from '../../containers/layout'
 import { Textfield } from '../../containers/input'
 import { ButtonGoogle } from '../../containers/google-button'
 import { ButtonGitHub } from '../../containers/github-button'
 import { ButtonFacebook } from '../../containers/facebook-button'
 import { ButtonTwitter } from '../../components/twitter-buttton'
-import '../../css/login.css'
 
-export const LoginPageView = () => {
+export const LoginPageView = ({ pushRegister }) => {
   return (
     <Layout>
       <div className="loginContainer">
@@ -39,7 +39,8 @@ export const LoginPageView = () => {
             </div>
           </div>
           <p>
-            Don’t have an account yet?<span>Register</span>
+            Don’t have an account yet?
+            <span onClick={pushRegister}>Register</span>
           </p>
         </div>
       </div>
