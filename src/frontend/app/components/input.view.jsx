@@ -10,13 +10,13 @@ export const TextfieldView = (props) => {
     placeholder,
     type,
     size,
-    handleInputChange,
+    handleChange,
     disabled,
     multiline,
     handlerHoverChange,
     handlerFocusChange,
     rows,
-    valueI,
+    value,
     helperText,
     name,
   } = props
@@ -29,7 +29,7 @@ export const TextfieldView = (props) => {
     >
       {multiline ? (
         <textarea
-          onChange={handleInputChange}
+          onChange={handleChange}
           disabled={disabled}
           onMouseEnter={handlerHoverChange}
           onMouseLeave={handlerHoverChange}
@@ -38,12 +38,12 @@ export const TextfieldView = (props) => {
           placeholder={placeholder}
           rows={rows}
         >
-          {valueI}
+          {value}
         </textarea>
       ) : (
         <input
           id="input"
-          onChange={handleInputChange}
+          onChange={handleChange}
           disabled={disabled}
           onMouseEnter={handlerHoverChange}
           onMouseLeave={handlerHoverChange}
@@ -52,7 +52,7 @@ export const TextfieldView = (props) => {
           placeholder={placeholder}
           name={name}
           type={type}
-          value={valueI}
+          value={value}
         />
       )}
 
