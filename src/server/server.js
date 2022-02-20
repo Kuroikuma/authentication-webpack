@@ -23,7 +23,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
 app.use(express.static(`${__dirname}/public`))
+
 app.use('/api', router())
+
+app.get('/auth-github/:code', auth_github)
+
+app.get('*', main)
 
 if (ENV === 'development') {
   console.log('loading dev config')
@@ -44,12 +49,9 @@ if (ENV === 'development') {
   app.disable('x-powered-by')
 }
 
-app.get('/auth-github/:code', auth_github)
-
-app.get('*', main)
-
 app.use((error, request, response, next) => {
   console.error(error.name)
+  console.log(error)
   switch (error.name) {
     case 'CastError':
       response.status(400).send({ error: 'id mal formado' })

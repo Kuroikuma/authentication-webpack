@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { LoginPage } from '../app/pages/login/login'
 import { Layout } from '../app/containers/layout'
 import { Register } from '../app/pages/register/register'
-import { ProfileView } from '../app/components/profile.view'
+import { Profile } from '../app/pages/profile/profile'
 export const IndexRoutes = () => {
   return (
     <Routes>
@@ -12,8 +12,16 @@ export const IndexRoutes = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/about" element={<h1>About</h1>} />
       <Route path="/layout" element={<Layout />} />
-      <Route path="/profile" element={<ProfileView />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/contact" element={<h1>Contact</h1>} />
+      <Route
+        path="*"
+        element={
+          <main style={{ padding: '1rem' }}>
+            <p>There's nothing here!</p>
+          </main>
+        }
+      />
     </Routes>
   )
 }
