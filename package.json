@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack-cli --config webpack.config.js",
-    "start:prod": "node src/server/index.js",
-    "start:dev": "nodemon src/server/index.js --exact babel-node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:prod": "node src/server/index.js"
   },
   "keywords": [],
   "author": "",
