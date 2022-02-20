@@ -1,0 +1,93 @@
+.AvatarContainer {
+  height: 8vh;
+  width: 11vw;
+  position: absolute;
+  top: 10px;
+  right: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.AvatarContainer > img {
+  height: 80%;
+  border-radius: 50%;
+}
+.AvatarContainer p {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 55%;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.035em;
+  color: var(--text-logo);
+  text-overflow: ellipsis;
+}
+.AvatarContainer--toogle {
+  width: 10%;
+  height: 100%;
+  display: flex;
+}
+.AvatarContainer--toogle img {
+  width: 100%;
+  cursor: pointer;
+  object-fit: contain;
+}
+.AvatarContainer__options {
+  height: 27vh;
+  width: 14vw;
+  background-color: var(--text-logo);
+  position: absolute;
+  top: 60px;
+  display: flex;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+}
+.AvatarContainer__options--show {
+  opacity: 1;
+  transform: none;
+}
+.AvatarContainer__options__item {
+  height: 6vh;
+  width: 12vw;
+  padding-left: 7px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  transition: all ease 0.5s;
+  justify-content: space-between;
+  align-items: center;
+}
+.AvatarContainer__options__item img {
+  height: 90%;
+}
+.AvatarContainer__options__item p {
+  width: 67%;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.035em;
+  text-align: start;
+  color: var(--border-color);
+}
+.AvatarContainer__options__item.show {
+  background: var(--second-color);
+}
+.show.AvatarContainer__options__item p {
+  color: var(--text-logo);
+}
+

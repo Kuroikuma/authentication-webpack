@@ -48,7 +48,7 @@ const REDUCER = (state, action) => {
 export const useLogin = () => {
   const initialState = {
     isLoggedIn: getIsLoggedIn || false,
-    user: getUser || null,
+    user: getUser || {},
   }
 
   const [state, dispatch] = useReducer(REDUCER, initialState)
