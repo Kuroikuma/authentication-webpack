@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack-cli --config webpack.config.js",
-    "start:prod": "node src/server/index.js",
+    "start:prod": "node src/server/public/assets/app.js",
     "start:dev": "nodemon src/server/index.js --exact babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
