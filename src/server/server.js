@@ -76,4 +76,5 @@ app.use((error, request, response, next) => {
 app.listen(PORT, (error) => {
   if (error) console.log(error)
   console.log(`Server Running on ${PORT}`)
+  console.log(`EN EL ENTORNO DE ${ENV}`)
 })
