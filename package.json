@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "6.14.15",
+    "npm": "14.17.6"
+  },
   "scripts": {
     "build": "webpack-cli --config webpack.config.js",
-    "start:prod": "node src/server/public/assets/app.js",
+    "start:prod": "node src/server/index.js",
     "start:dev": "nodemon src/server/index.js --exact babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
