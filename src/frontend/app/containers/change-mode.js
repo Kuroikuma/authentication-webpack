@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ChangeModeView } from '../components/Change-mode.view'
+import { ChangeModeView } from '../components/change-mode.view'
 import Context from '../context/theme.context'
 
 export const ChangeMode = () => {
