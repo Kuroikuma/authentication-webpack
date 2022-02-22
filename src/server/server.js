@@ -22,8 +22,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(cors())
 
-app.use(express.static(`${__dirname}/public`))
-
 app.use('/api', router())
 
 app.get('/auth-github/:code', auth_github)
@@ -44,6 +42,7 @@ if (ENV === 'development') {
   app.use(webpackHotMiddleware(compiler))
 } else {
   console.log('Loading production config')
+  app.use(express.static(`${__dirname}/public`))
   app.use(helmet())
   app.use(helmet.permittedCrossDomainPolicies)
   app.disable('x-powered-by')
