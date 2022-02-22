@@ -36,9 +36,12 @@ export const LoginPage = () => {
       }
 
       LoginServices(user).then((response) =>
-        response ? Login({ isLoggedIn: true, user: response }) : null
+        response
+          ? response.error
+            ? null
+            : Login({ isLoggedIn: true, user: response })
+          : null
       )
-      navigate('/profile')
     }
   }
 

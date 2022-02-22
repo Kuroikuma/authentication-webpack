@@ -47,6 +47,7 @@ export async function LoginServices(user) {
   return response
     .json()
     .then((response) => {
+      console.log(response)
       return response
     })
     .catch((error) => console.log(error))
