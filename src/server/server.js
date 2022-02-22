@@ -1,14 +1,17 @@
 import express from 'express'
 import webpack from 'webpack'
 import main from './routes/main'
+
 import auth_github from './routes/auth_github'
 import helmet from 'helmet'
 import router from './routes/router'
-
+const path = require('path')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
 require('./db/mongoDB')
+
+const mime = require('mime')
 
 require('dotenv').config()
 
@@ -17,7 +20,16 @@ const PORT = process.env.PORT || 3000
 
 const app = express()
 
-app.use(express.static(`${__dirname}/public`))
+const setHeadersOnStatic = (res, path, stat) => {
+  const type = mime.getType(path)
+  res.set('content-type', type)
+}
+
+const staticOptions = {
+  setHeaders: setHeadersOnStatic,
+}
+
+app.use(express.static(path.join(__dirname, 'public'), staticOptions))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
