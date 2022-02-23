@@ -12,6 +12,8 @@ export const Avatar = () => {
 
   const [isShowOptions, setIsShowOptions] = useState(false)
 
+  const [width, setWidth] = useState(0)
+
   const [User, setUser] = useState({})
 
   const show = () => {
@@ -38,16 +40,31 @@ export const Avatar = () => {
     }
   }, [isLoggedIn])
 
-  return isLoggedIn ? (
-    <AvatarView
-      avatar={User.avatar}
-      username={User.username}
-      show={show}
-      theme={theme}
-      isShowOptions={isShowOptions}
-      handleHover={handleHover}
-      handleLogout={handleLogout}
-      hover={hover}
-    />
-  ) : null
+  const cambiarwidth = () => {
+    if (window.innerWidth === 375) {
+      setWidth(window.innerWidth)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', cambiarwidth)
+    }
+  }, [])
+
+  return (
+    isLoggedIn && (
+      <AvatarView
+        avatar={User.avatar}
+        username={User.username}
+        show={show}
+        width={width}
+        theme={theme}
+        isShowOptions={isShowOptions}
+        handleHover={handleHover}
+        handleLogout={handleLogout}
+        hover={hover}
+      />
+    )
+  )
 }

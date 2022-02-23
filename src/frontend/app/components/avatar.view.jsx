@@ -12,6 +12,7 @@ export const AvatarView = (props) => {
     username,
     show,
     theme,
+    width,
     isShowOptions,
     handleHover,
     handleLogout,
@@ -19,7 +20,7 @@ export const AvatarView = (props) => {
   } = props
   return (
     <div className="AvatarContainer">
-      <img src={avatar} alt="avatar" />
+      <img onClick={width && handleLogout} src={avatar} alt="avatar" />
       <p>{username}</p>
       <div onClick={show} className="AvatarContainer--toogle">
         {theme === 'white' ? (
