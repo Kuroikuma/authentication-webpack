@@ -75,7 +75,7 @@ export const Button = ({
       className={`buttonDefault ${variant} ${disableShadow} ${position} ${size} ${color}`}
     >
       <p> {children} </p>
-      <img src={img} alt="" />
+      {img && <img src={img} alt={img} />}
     </button>
   )
 }
