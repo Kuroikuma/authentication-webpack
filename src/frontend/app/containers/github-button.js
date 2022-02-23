@@ -34,12 +34,13 @@ export const ButtonGitHub = () => {
             postUserAuth(userPost).then((response) =>
               response ? Login({ isLoggedIn: true, user: response }) : null
             )
-            navigate(`/profile`)
+            navigate(`/`)
           })
           .catch((error) => {
             console.log(error)
           })
       }
+      //   navigate(`/`)
     }
   }, [])
 
