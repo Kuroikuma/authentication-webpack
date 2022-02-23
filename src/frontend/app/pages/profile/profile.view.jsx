@@ -4,7 +4,7 @@ import { ProfileCard } from '../../components/profile-card'
 import { Button } from '../../components/button'
 import '../../css/profile.css'
 
-export const ProfileView = ({ User }) => {
+export const ProfileView = ({ User, goEditProfile }) => {
   return (
     <Layout>
       <div className="profile_container">
@@ -15,7 +15,9 @@ export const ProfileView = ({ User }) => {
         <div className="profile_container__content">
           <div className="profile_container__content__item">
             <div className="profile_container__content__item__left">
-              <Button variant="primary">Edit</Button>
+              <Button onClick={goEditProfile} variant="primary">
+                Edit
+              </Button>
             </div>
             <div className="profile_container__content__item__rigth">
               <h3>Profile</h3>
