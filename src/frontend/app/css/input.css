@@ -12,6 +12,7 @@
 .containerInput input {
   width: 200px;
   height: 56px;
+  margin-top: 5px;
   outline: none;
   background-color: transparent;
   border: 1px solid #828282;
@@ -56,9 +57,12 @@
 .focus.error p {
   color: #d32f2f;
 }
+.fullWidthi input {
+  height: 90%;
+}
 .smi {
   width: 200px;
-  height: 40px;
+  height: 46px;
 }
 .mdi {
   width: 200px;
@@ -87,7 +91,6 @@
 .containerInput textarea:hover {
   border: 1px solid #333333;
 }
-
 .focus.containerInput textarea {
   border: 1px solid #2962ff;
 }
@@ -99,4 +102,14 @@
 }
 .input {
   width: 100% !important;
+}
+
+@media screen and (max-width: 375px) {
+  .containerInput input::placeholder {
+    color: var(--title-color);
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

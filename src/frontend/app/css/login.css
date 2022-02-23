@@ -82,3 +82,12 @@
   cursor: pointer;
   color: #1f88ff;
 }
+
+@media screen and (max-width: 375px) {
+  .loginContainer {
+    width: 90vw;
+  }
+  .loginContainer__Botton__Logo {
+    height: 30%;
+  }
+}
