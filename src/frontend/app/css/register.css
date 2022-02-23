@@ -29,3 +29,8 @@
 .inputFile input {
   display: none;
 }
+@media screen and (max-width: 375px) {
+  .registerContainer {
+    width: 90vw;
+  }
+}

@@ -22,16 +22,24 @@
   border-radius: 10px;
 }
 .change.white {
-  background-color: var(--text-color);
+  background-color: var(--text-logo);
 }
 .change.white button {
   transform: none;
   background-color: var(--primary-color);
 }
 .change.dark {
-  background-color: var(--title-color);
+  background-color: var(--text-logo);
 }
 .change.dark button {
   transform: translateX(27px);
   background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 375px) {
+  .change {
+    top: 10px;
+    right: 20px;
+    width: 15vw;
+  }
 }

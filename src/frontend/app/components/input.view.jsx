@@ -10,6 +10,7 @@ export const TextfieldView = (props) => {
     placeholder,
     type,
     size,
+    label,
     onChange,
     disabled,
     multiline,
@@ -23,10 +24,14 @@ export const TextfieldView = (props) => {
 
   return (
     <div
-      className={`containerInput ${fullWidth ? 'fullWidthi' : ''} ${
-        hover ? 'hover' : ''
-      } ${focus ? 'focus' : ''} ${error ? 'error' : ''} ${size}i`}
+      className={`containerInput 
+        ${fullWidth && 'fullWidthi'} 
+        ${hover && 'hover'} 
+        ${focus && 'focus'} 
+        ${error && 'error'} 
+        ${size}i`}
     >
+      {label && <p>{label}</p>}
       {multiline ? (
         <textarea
           onChange={onChange}

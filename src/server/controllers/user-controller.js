@@ -53,14 +53,18 @@ exports.showById = (req, res, next) => {
 
 exports.update = (req, res, next) => {
   const id = req.params.id
-  const newUser = req.body
-  User.findByIdAndUpdate(id, newUser)
-    .then((user) => {
-      res.status(200).send(user)
-    })
-    .catch((error) => {
-      next(error)
-    })
+  if (id) {
+    const newUser = req.body
+    User.findByIdAndUpdate(id, newUser)
+      .then((user) => {
+        res.status(200).send(user)
+      })
+      .catch((error) => {
+        next(error)
+      })
+  } else {
+    next()
+  }
 }
 
 exports.delete = (req, res, next) => {

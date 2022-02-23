@@ -2,7 +2,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import render from '../render'
 import { StaticRouter } from 'react-router-dom/server'
-import { IndexRoutes } from '../../frontend/routes/index.routes'
+import { IndexRoutes } from '../../frontend/app/routes/index.routes'
 import { ThemeContextProvider } from '../../frontend/app/context/theme.context'
 import { UserProvider } from '../../frontend/app/context/user.context'
 

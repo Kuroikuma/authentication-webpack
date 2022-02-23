@@ -10,7 +10,7 @@
 }
 .AvatarContainer > img {
   height: 80%;
-  width: 30%;
+  max-width: 30%;
   border-radius: 50%;
 }
 .AvatarContainer p {
@@ -90,4 +90,31 @@
 }
 .show.AvatarContainer__options__item p {
   color: var(--text-logo);
+}
+@media screen and (max-width: 375px) {
+  .AvatarContainer {
+    height: 8vh;
+    width: 11.6vw;
+    position: absolute;
+    top: 0px;
+    right: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .AvatarContainer > img {
+    height: 80%;
+    z-index: 150;
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  .AvatarContainer__options {
+    width: 45vw;
+  }
+  .AvatarContainer__options__item {
+    width: 100%;
+  }
+  .AvatarContainer__options--show {
+    z-index: 110;
+  }
 }

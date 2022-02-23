@@ -8,6 +8,7 @@ export const Textfield = (props) => {
     fullWidth = false,
     helperText = '',
     value = '',
+    label = '',
     size = '',
     type = '',
     placeholder = '',
@@ -35,6 +36,7 @@ export const Textfield = (props) => {
       focus={focus}
       error={error}
       size={size}
+      label={label}
       onChange={onChange}
       disabled={disabled}
       multiline={multiline}
